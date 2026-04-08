@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: spring-aop
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Dev
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # options: none, validate, update, create, create-drop
+    show-sql: true
+
+# Show parameter values (instead of ? placeholders)
+#logging:
+#  level:
+#    org.hibernate.orm.jdbc.bind: TRACE
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+#    org.hibernate.engine.jdbc.spi.SqlStatementLogger: DEBUG
