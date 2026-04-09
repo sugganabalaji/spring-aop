@@ -33,13 +33,13 @@ public class LoggingAspect {
         LOGGER.info(joinPoint.getSignature() + " - ended");
     }
 
-    @AfterReturning(pointcut = "execution(* com.app.service.JobJpaService.*(..))", returning = "returnValue")
-    public void logAfterReturning(JoinPoint joinPoint, Object returnValue) {
-        LOGGER.info(joinPoint.getSignature() + ": " + returnValue);
+    @AfterReturning(pointcut = "execution(* com.app.service.JobJpaService.*(..))", returning = "returnedValue")
+    public void logAfterReturning(JoinPoint joinPoint, Object returnedValue) {
+        LOGGER.info(joinPoint.getSignature() + ": " + returnedValue);
     }
 
     @AfterThrowing(pointcut = "execution(* com.app.service.JobJpaService.*(..))", throwing = "e")
-    public void logAfterThrowing(JoinPoint joinPoint, Exception e) {
+    public void logAfterThrowing(JoinPoint joinPoint, Throwable e) {
         LOGGER.info(joinPoint.getSignature() + ": " + e.getMessage());
     }
 
